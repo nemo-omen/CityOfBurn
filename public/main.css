@@ -1,0 +1,36 @@
+/* client/style/global.css */
+:root {
+  font-family:
+    "Lucida Sans",
+    "Lucida Sans Regular",
+    "Lucida Grande",
+    "Lucida Sans Unicode",
+    Geneva,
+    Verdana,
+    sans-serif;
+  font-size: 1rem;
+  --background: #00121a;
+  --foreground: #fff2ea;
+}
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* fakecss:/home/trainingmontage/dev/projects/CityOfBurn/client/components/Header.esbuild-svelte-fake-css */
+header.svelte-15ijesg {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+h1.svelte-15ijesg {
+  color: tomato;
+}
+
+/* fakecss:/home/trainingmontage/dev/projects/CityOfBurn/client/App.esbuild-svelte-fake-css */
+main.svelte-pv1q7z {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+/*# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vY2xpZW50L3N0eWxlL2dsb2JhbC5jc3MiLCAiSGVhZGVyLnN2ZWx0ZSIsICJBcHAuc3ZlbHRlIl0sCiAgInNvdXJjZXNDb250ZW50IjogWyI6cm9vdCB7XG4gIGZvbnQtZmFtaWx5OiAnTHVjaWRhIFNhbnMnLCAnTHVjaWRhIFNhbnMgUmVndWxhcicsICdMdWNpZGEgR3JhbmRlJywgJ0x1Y2lkYSBTYW5zIFVuaWNvZGUnLCBHZW5ldmEsIFZlcmRhbmEsIHNhbnMtc2VyaWY7XG4gIGZvbnQtc2l6ZTogMXJlbTtcblxuICAtLWJhY2tncm91bmQ6ICMwMDEyMWE7XG4gIC0tZm9yZWdyb3VuZDogI2ZmZjJlYTtcbn1cblxuYm9keSB7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJhY2tncm91bmQpO1xuICBjb2xvcjogdmFyKC0tZm9yZWdyb3VuZCk7XG59IiwgbnVsbCwgbnVsbF0sCiAgIm1hcHBpbmdzIjogIjtBQUFBO0FBQ0U7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUNBO0FBRUE7QUFDQTtBQUFBO0FBR0Y7QUFDRTtBQUNBO0FBQUE7OztBQ0ZBO0FBQ0U7QUFDQTtBQUNBOztBQUVGO0FBQ0U7Ozs7QUNTRjtBQUNFO0FBQ0E7QUFDQTs7IiwKICAibmFtZXMiOiBbXQp9Cg== */
