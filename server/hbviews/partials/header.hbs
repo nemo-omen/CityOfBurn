@@ -1,0 +1,34 @@
+<header>
+  <div class="container">
+
+  <a class="site-brand" href="/">
+    <img src="favicon.svg" alt="Flames" width="36" height="36">
+    <h1>City of Burn</h1>
+  </a>
+  <nav>
+    <ol>
+      {{#if (pathMatches url '')}}
+      <li><a href="/" class="current">Home</a></li>
+      {{else}}
+      <li><a href="/">Home</a></li>
+      {{/if}}
+
+      {{#if (pathMatches url 'app')}}
+      <li><a href="/app" class="current">Game</a></li>
+      {{else}}
+      <li><a href="/app">Game</a></li>
+      {{/if}}
+
+      {{#if (pathMatches url 'about')}}
+      <li><a href="/about" class="current">About</a></li>
+      {{else}}
+      <li><a href="/about">About</a></li>
+      {{/if}}
+
+      {{#if user}}
+        <a href="/user?{{user.id}}">{{user.userName}}</a>
+      {{/if}}
+    </ol>
+  </nav>
+  </div>
+</header>

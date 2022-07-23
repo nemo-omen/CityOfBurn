@@ -1,7 +1,7 @@
 import { Drash } from '../deps.ts';
 
-export class HomeResource extends Drash.Resource {
-  paths = ['/'];
+export class AboutResource extends Drash.Resource {
+  paths = ['/about'];
 
   public async GET(request: Drash.Request, response: Drash.Response): void {
     // console.log({ request });
@@ -9,7 +9,7 @@ export class HomeResource extends Drash.Resource {
       url: request.url
     };
     // return response.html(html);
-    const html = await response.render('index', templateVars) as string;
+    const html = await response.render('about', templateVars) as string;
 
     response.html(html);
   }

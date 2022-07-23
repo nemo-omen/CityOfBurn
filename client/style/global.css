@@ -2,11 +2,142 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1rem;
 
-  --background: #00121a;
+  --background: #001720;
+  --dark-background: #00121a;
   --foreground: #fff2ea;
+  --dark-foreground: #f5e6de;
+  --accent: tomato;
+
+  /* Document Widths */
+  --doc-desktop-large: 50vw;
+  --doc-desktop: 60vw;
+  --doc-laptop: 70vw;
+  --doc-tablet-landscape: 80vw;
+  --doc-tablet-portrait: 90vw;
+  --doc-sub-tablet: 100vw;
+
+  --doc-width: var(--doc-sub-tablet);
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: var(--background);
   color: var(--foreground);
+  padding: 0;
+  margin: 0;
+}
+
+header,
+main,
+footer {
+  width: 100vw;
+}
+
+header {
+  background-color: var(--dark-background);
+}
+
+footer {
+  margin-top: auto;
+  background-color: var(--dark-background);
+}
+
+.container {
+  --doc-width: var(--doc-tablet-portrait);
+  width: var(--doc-width);
+  margin: 0 auto;
+  /* padding-inline: 1rem; */
+}
+
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .container {
+  padding-inline: 1rem;
+}
+
+.site-brand {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-brand:hover {
+  color: currentColor;
+}
+
+.site-brand h1 {
+  font-size: 1.5rem;
+}
+
+nav ol {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+nav ol a {
+  text-decoration: none;
+  color: var(--dark-foreground);
+}
+
+.current {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 0.125em;
+  color: var(--accent);
+}
+
+a {
+  color: currentColor;
+  transition: color 0.125s ease-in-out;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 500px) {
+  .container {
+    --doc-width: var(--doc-tablet-portrait);
+  }
+
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    --doc-width: var(--doc-tablet-landscape);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    --doc-width: var(--doc-laptop);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    --doc-width: var(--doc-desktop);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    --doc-width: var(--doc-desktop-large);
+  }
 }

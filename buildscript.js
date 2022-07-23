@@ -32,6 +32,6 @@ esbuild
     });
 
 //use a basic html file to test with
-fs.copyFileSync("./client/index.html", "./public/index.html");
-fs.copyFileSync("./client/script/refresh.js", "./public/script/refresh.js");
-fs.copyFileSync("./client/favicon.svg", "./public/favicon.svg");
+// fs.copyFileSync("./client/index.html", "./public/index.html");
+// fs.copyFileSync("./client/script/refresh.js", "./public/script/refresh.js");
+// fs.copyFileSync("./client/favicon.svg", "./public/favicon.svg");
