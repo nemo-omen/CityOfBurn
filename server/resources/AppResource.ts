@@ -1,7 +1,11 @@
-import { Drash } from '../deps.ts';
+import { Drash, authService } from '../deps.ts';
 
 export class AppResource extends Drash.Resource {
-  paths = ['/app'];
+  public paths = ['/app'];
+
+  public services = {
+    ALL: [authService]
+  };
 
   public async GET(request: Drash.Request, response: Drash.Response): void {
     const templateVars = {

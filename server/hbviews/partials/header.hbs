@@ -2,7 +2,7 @@
   <div class="container">
 
   <a class="site-brand" href="/">
-    <img src="favicon.svg" alt="Flames" width="36" height="36">
+    {{> logo}}
     <h1>City of Burn</h1>
   </a>
   <nav>
@@ -14,9 +14,9 @@
       {{/if}}
 
       {{#if (pathMatches url 'app')}}
-      <li><a href="/app" class="current">Game</a></li>
+      <li><a href="/app" class="current">Play</a></li>
       {{else}}
-      <li><a href="/app">Game</a></li>
+      <li><a href="/app">Play</a></li>
       {{/if}}
 
       {{#if (pathMatches url 'about')}}
@@ -26,7 +26,23 @@
       {{/if}}
 
       {{#if user}}
-        <a href="/user?{{user.id}}">{{user.userName}}</a>
+        {{#if (pathMatches url 'user')}}
+        <li><a href="/user?{{user.id}}" class="current">{{user.userName}}</a></li>
+        {{else}}
+        <li><a href="/user?{{user.id}}">{{user.userName}}</a></li>
+        {{/if}}
+      {{else}}
+        {{#if (pathMatches url 'register')}}
+        <li><a href="/register" class="current">Register</a></li>
+        {{else}}
+        <li><a href="/register">Register</a></li>
+        {{/if}}
+
+        {{#if (pathMatches url 'login')}}
+        <li><a href="/login" class="current">Login</a></li>
+        {{else}}
+        <li><a href="/login">Login</a></li>
+        {{/if}}
       {{/if}}
     </ol>
   </nav>

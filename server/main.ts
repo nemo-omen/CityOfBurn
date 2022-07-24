@@ -4,6 +4,7 @@ import {
   HomeResource,
   AppResource,
   AboutResource,
+  RegisterResource,
   FilesResource,
   TengineService,
   Handlebars,
@@ -24,7 +25,14 @@ const httpServer = new Drash.Server({
   hostname: 'localhost',
   port: httpPort,
   protocol: 'http',
-  resources: [HomeResource, FilesResource, SocketResource, AppResource, AboutResource],
+  resources: [
+    AboutResource,
+    AppResource,
+    FilesResource,
+    HomeResource,
+    RegisterResource,
+    SocketResource,
+  ],
   // services: [tengine]
   services: [handlebars]
 });

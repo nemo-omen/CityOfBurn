@@ -7,6 +7,8 @@
   --foreground: #fff2ea;
   --dark-foreground: #f5e6de;
   --accent: tomato;
+  --highlight: #002b3b;
+  --highlight-focus: #003d53;
 
   /* Document Widths */
   --doc-desktop-large: 50vw;
@@ -19,9 +21,18 @@
   --doc-width: var(--doc-sub-tablet);
 }
 
+* {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: 2px solid var(--highlight-focus);
+  outline-offset: 0.25em;
+}
+
 body {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   background-color: var(--background);
   color: var(--foreground);
@@ -37,16 +48,22 @@ footer {
 
 header {
   background-color: var(--dark-background);
+  padding: 1rem;
+}
+
+main {
+  height: 100%;
 }
 
 footer {
-  margin-top: auto;
   background-color: var(--dark-background);
+  padding: 1rem;
 }
 
 .container {
   --doc-width: var(--doc-tablet-portrait);
   width: var(--doc-width);
+  min-height: 100%;
   margin: 0 auto;
   /* padding-inline: 1rem; */
 }
@@ -76,24 +93,21 @@ main .container {
   font-size: 1.5rem;
 }
 
+.logo {
+  width: 3rem;
+  height: 3rem;
+}
+
 nav ol {
   list-style-type: none;
   display: flex;
   gap: 1rem;
   margin: 0;
-  padding: 1rem;
 }
 
 nav ol a {
   text-decoration: none;
   color: var(--dark-foreground);
-}
-
-.current {
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
-  text-decoration-thickness: 0.125em;
-  color: var(--accent);
 }
 
 a {
@@ -106,7 +120,81 @@ a:hover {
   text-decoration: none;
 }
 
-@media screen and (min-width: 500px) {
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.current {
+  text-decoration: underline;
+  text-underline-offset: 0.5em;
+  text-decoration-thickness: 0.25em;
+  color: var(--accent);
+}
+
+.current:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.25em;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-form {
+  margin: 0 auto;
+  max-width: 21rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form h2 {
+  margin-bottom: 1rem;
+}
+
+.auth-form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: none;
+  padding: 0;
+}
+
+.auth-form label {
+  font-size: 1.25rem;
+  letter-spacing: 0.125em;
+}
+
+input {
+  font-size: 1.25rem;
+  letter-spacing: 0.125em;
+  padding: 0.5rem;
+  border: 1px solid var(--highlight);
+  background-color: var(--dark-background);
+  color: var(--foreground);
+  border-radius: 0.25em;
+}
+
+input:focus {
+  border-color: var(--highlight-focus);
+  background-color: var(--background);
+  outline-offset: 0;
+}
+
+.auth-form input[type="submit"] {
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
   .container {
     --doc-width: var(--doc-tablet-portrait);
   }
