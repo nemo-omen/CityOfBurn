@@ -15,5 +15,9 @@ export class RegisterResource extends Drash.Resource {
 
   public POST(request: Request, response: Response): void {
     console.log({ request });
+    // if success - send to /app
+    // else, send back to register & populate the form with old data
+    // or! handle it client-side and validate/check for user qualifications
+    // using fetch
   }
 }
